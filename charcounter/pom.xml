@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.gmail.sabarov.e</groupId>
+  <artifactId>charcounter</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>CharCounter</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>app.cash.tempest</groupId>
+  		<artifactId>tempest-testing-junit5</artifactId>
+  		<version>1.5.2</version>
+  		<type>pom.sha512</type>
+  	</dependency>
+  	<dependency>
+  		<groupId>app.cash.tempest</groupId>
+  		<artifactId>tempest-testing-junit4</artifactId>
+  		<version>1.5.2</version>
+  		<type>pom.sha512</type>
+  	</dependency>
+  </dependencies>
+</project>
