@@ -13,7 +13,7 @@ public class CharCounter {
     private static final char QUOTATION_MARK = (char)34;
     private static final String EQUAL_SING = " = ";
     private static final String NEW_LINE = "\n";
-    public static Map<String, String> DATA_CHAR_COUNTING = new HashMap();
+    private static Map<String, String> DATA_CHAR_COUNTING = new HashMap();
     
     public String charCounting(String line) {
         if (line == null) { 
