@@ -28,12 +28,12 @@ class FormatterTest {
     }
 
     @Test
-    void testCharCounting() {
+    void testFormatCharCounting() {
         assertEquals(EXPECTED, setUp().formatCharCounting(ACTUAL, instanse().charCounting(ACTUAL)));
     }
     
     @Test
-    void testThrowsIllegalArgumentExceptionCharCounting() {
+    void testThrowsIllegalArgumentExceptionFormatCharCounting() {
         String str = null;
         assertThrows(IllegalArgumentException.class, () -> setUp().formatCharCounting(str, instanse().charCounting(str)));
     } 
