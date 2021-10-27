@@ -18,12 +18,12 @@ class FormatterTest {
             + "\"!\" = 1\n";
 
     @Before
-    static Formatter setUp(){
+    private Formatter setUp(){
         return new Formatter();
     }
     
     @Before
-    static CharCounter instanse(){
+    private CharCounter instanse(){
         return new CharCounter();
     }
 
