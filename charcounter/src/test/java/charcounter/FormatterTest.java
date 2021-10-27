@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
-class CharCounterTest {
+class FormatterTest {
     private static final String ACTUAL = "Hello world!";
     private static final String EXPECTED = ""
             + "\"H\" = 1\n"
@@ -18,19 +18,24 @@ class CharCounterTest {
             + "\"!\" = 1\n";
 
     @Before
-    static CharCounter setUp(){
+    static Formatter setUp(){
+        return new Formatter();
+    }
+    
+    @Before
+    static CharCounter instanse(){
         return new CharCounter();
     }
 
     @Test
     void testCharCounting() {
-        assertEquals(EXPECTED, setUp().charCounting(ACTUAL));
+        assertEquals(EXPECTED, setUp().formatCharCounting(ACTUAL, instanse().charCounting(ACTUAL)));
     }
     
     @Test
     void testThrowsIllegalArgumentExceptionCharCounting() {
         String str = null;
-        assertThrows(IllegalArgumentException.class, () -> setUp().charCounting(str));
+        assertThrows(IllegalArgumentException.class, () -> setUp().formatCharCounting(str, instanse().charCounting(str)));
     } 
 
 }
