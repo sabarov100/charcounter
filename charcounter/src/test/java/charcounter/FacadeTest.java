@@ -37,7 +37,7 @@ class FacadeTest {
     
     @Before
     private static Facade setUp() {
-        return  new Facade();
+        return  new Facade(new CharCounter(), new Formatter());
     }
     
     @Test
