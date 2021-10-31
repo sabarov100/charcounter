@@ -7,10 +7,11 @@ import java.util.Map;
 public class CharCounter {
     
     private static final String EMPTY = "";
+    private static final String EXCEPTION_MESSAGE = "Line cannot be NULL";
     
     protected Map<Character, Integer> charCounting(String line) {
         if (line == null) { 
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(EXCEPTION_MESSAGE);
         }
         char[] symbols = line.toCharArray();
         Map<Character, Integer> map = new HashMap<>();

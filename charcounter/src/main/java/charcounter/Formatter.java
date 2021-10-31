@@ -13,10 +13,11 @@ public class Formatter {
     private static final String QUOTATION_MARK = "\"";
     private static final String EQUAL_SING = " = ";
     private static final String NEW_LINE = "\n";
+    private static final String EXCEPTION_MESSAGE = "Argument cannot be NULL";
     
     public String formatCharCounting(String lineInput, Map<Character, Integer> mapInput) {
-        if (lineInput == null) { 
-            throw new IllegalArgumentException();
+        if (lineInput == null || mapInput == null) { 
+            throw new IllegalArgumentException(EXCEPTION_MESSAGE);
         } 
         if(Cache.cache.containsKey(lineInput)) {
             mapInput = Cache.cache.get(lineInput);
