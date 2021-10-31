@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 class FormatterTest {
     private static final String ACTUAL = "Hello world!";
+    private static final String ACTUAL_NULL = null;
+    private static final String EXPECTED_EXCEPTION_MESSAGE = "Argument cannot be NULL";
     private static final String EXPECTED = ""
             + "\"H\" = 1\n"
             + "\"e\" = 1\n"
@@ -34,8 +36,15 @@ class FormatterTest {
     
     @Test
     void testThrowsIllegalArgumentExceptionFormatCharCounting() {
-        String str = null;
-        assertThrows(IllegalArgumentException.class, () -> setUp().formatCharCounting(str, instanse().charCounting(str)));
+        assertThrows(IllegalArgumentException.class, () -> setUp().formatCharCounting(ACTUAL_NULL, instanse().charCounting(ACTUAL_NULL)));
     } 
 
+    void testMessageIllegalArgumentExceptionFormatCharCounting() {
+        try {
+            setUp().formatCharCounting(ACTUAL_NULL, instanse().charCounting(ACTUAL_NULL));
+        }
+        catch(IllegalArgumentException exception) {
+            assertEquals(EXPECTED_EXCEPTION_MESSAGE, exception.getMessage());
+        }
+    }
 }
