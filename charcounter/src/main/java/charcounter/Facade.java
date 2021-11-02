@@ -1,5 +1,7 @@
 package charcounter;
 
+import java.util.Map;
+
 public class Facade {
 
     private CharCounter charCounter;
@@ -12,7 +14,13 @@ public class Facade {
     }
     
     public String charCounterUserInterface(String lineInput) {
-        return formatter.formatCharCounting(lineInput, charCounter.charCounting(lineInput));
+        if(Cache.isPresent(lineInput)) {
+            return formatter.formatCharCounting(lineInput, Cache.getCache(lineInput));
+        } else {
+        Map<Character, Integer> result = charCounter.charCounting(lineInput);
+        Cache.put(lineInput, result);
+        return formatter.formatCharCounting(lineInput, result);
+        }
     }
 
 }
