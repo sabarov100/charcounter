@@ -8,7 +8,6 @@ import java.util.stream.Stream;
 
 public class Formatter {
     
-    private CharCounter charCounter;
     private static final String EMPTY = "";
     private static final String QUOTATION_MARK = "\"";
     private static final String EQUAL_SING = " = ";
@@ -19,11 +18,6 @@ public class Formatter {
         if (lineInput == null || mapInput == null) { 
             throw new IllegalArgumentException(EXCEPTION_MESSAGE);
         } 
-        if(Cache.cache.containsKey(lineInput)) {
-            mapInput = Cache.cache.get(lineInput);
-        } else {
-            mapInput = charCounter.charCounting(lineInput);
-        }
         StringBuilder sb = new StringBuilder();
         Stream<String> streamOfArray = Arrays.stream(lineInput.split(EMPTY));
         List<String> list = streamOfArray.map(s->s.split(EMPTY)).flatMap(Arrays::stream)

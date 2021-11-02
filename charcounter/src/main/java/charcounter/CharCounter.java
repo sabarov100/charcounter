@@ -18,7 +18,6 @@ public class CharCounter {
         for(char symbol : symbols) {
             map.put(symbol, (int) Arrays.stream(line.split(EMPTY)).filter(s -> s.equals("" + symbol)).count());
         }
-        Cache.cache.put(line, map);
         return map;   
     }
 }
